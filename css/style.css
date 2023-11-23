@@ -1,0 +1,33 @@
+/* imports */
+
+/* Declarar variables */
+:root{
+    --textColor1: ;
+    --textColor2: ;
+    --bgColor1: ;
+    --bgColor2: ;
+    --btnColor1: ;
+    --btnTextColor1: ;
+}
+/* Disseny general */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+}
+
+/* disseny header */
+header{
+
+}
+
+/* Disseny main */
+main{
+
+}
+/* Disseny footer */
+footer{
+
+}
