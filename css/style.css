@@ -1,33 +1,242 @@
 /* imports */
-
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@font-face {
+    font-family: "Parry Hotter";
+    src: url("parry-hotter/ParryHotter.ttf") format("truetype");
+  }
 /* Declarar variables */
 :root{
-    --textColor1: ;
-    --textColor2: ;
-    --bgColor1: ;
-    --bgColor2: ;
-    --btnColor1: ;
-    --btnTextColor1: ;
+    --textColor1:#b3b3b3 ;
+    --textColor2:black ;
+    --textColor3:rgb(255, 143, 156);
+    --btnColor1:rgb(255, 143, 156) ;
+    --btnColor2:rgb(251, 149, 80);
+    --btnTextColor1:white;
 }
 /* Disseny general */
 *{
     margin: 0;
     padding: 0;
+    font-family: "Inter", sans-serif;
 }
-body{
-    
+/* disseny comu barra superior i header */
+.header-busqueda, .barra-superior{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #959595  ;
 }
+/* disseny barra superior */
+.barra-superior{
+    padding: 20px 10px 20px 10px;
 
+    color: var(--textColor1);
+}
 /* disseny header */
 header{
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+h1{
+    font-family: "Parry Hotter";
+    margin-bottom: 40px ;
+}
+.header.busqueda{
+    padding-bottom: 30px;
+}
+.busqueda{
+    width: 40%;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid rgb(251, 149, 80);
+}
+.icono{
+    margin: 5px;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    font-weight: bolder;
+    justify-content: center;
+}
+/* separar els botons de navegació */
+nav >div{
+    margin: 20px;
+}
+/* menú desplegable */
+.women{
+    position: relative;
+}
+.desplegable{
+    position: absolute;
+    top: 120px;
+    left: 45%;
+    display: none;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    background-color: white;
+}
+.nav-desplegable  p{
+    margin: 15px;
+}
+.nav-img{
+    border-radius: 15px;
+    width: 70%;
+    margin-left: 10px;
+}
+/* donar format al hover */
+nav:hover .desplegable{
+    display: flex;
+}
+/* format del banner central */
+.banner{
+    background-image: url(../media/banners/banner-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:100%;
+    width: 80%;
+    margin: auto;
+    padding:15px 50px 15px 50px;
+    border-radius: 15px;
+}
+h2{
+    color: var(--textColor3);
+    margin-bottom: 10px;
+}
+.banner >p{
+    color: var(--textColor1);
+}
+/* Format compartit per tots els botons */
+.btn{
+    width: fit-content;
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--btnTextColor1);
+    font-weight: bolder;
+}
+/* format botó SHOP NOW */
+.shopnow{
+    background-color:var(--btnColor1);
+    margin-top: 15px;
 
 }
-
-/* Disseny main */
-main{
-
+/* cambiar el format del titul NEW PRODUCTS */
+.titulo-producto{
+    font-family:"Inter" ;
+    width: 87%;
+    margin: auto;
+    padding: 10px;
 }
-/* Disseny footer */
+
+
+/* Disseny de les targetes amb GRID */
+.targeta{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 50% auto auto auto;
+    grid-template-areas: 
+        "targ-img"
+        "targ-nom"
+        "targ-descripcio"
+        "targ-valoracio"
+        "targ-preu";
+    /* position: relative; */
+}
+.targ-img{
+    grid-area: targ-img;
+    width: 75%;
+}
+.producte{
+    grid-area: targ-nom;
+    color: var(--textColor3);
+    margin-top: 10px;
+    font-size: 1rem;
+}
+.descripcio{
+    grid-area: targ-descripcio;
+    color: var(--textColor1);
+}
+.valoració{
+    grid-area: targ-valoració;
+}
+.preu{
+    grid-area: targ-preu;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* donar format al preu anterior */
+.text-taxat{
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+/* format especific botó add */
+.add{
+    background-color: var(--btnColor2);
+    margin-left: 10px;
+}
+/* format etiqueta de descompte */
+.descompte{
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    height: 30px;
+    width: 45px;
+    background-color:rgb(255, 143, 156) ;
+    color: white;
+    position: absolute;
+}
+/* dona format a la graella per que sigui adaptatiu */
+.graella{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+/* Disseny del peu de pàgina */
 footer{
+    background-color: black;
+    color:var(--textColor1);
+    padding-top: 15px;
+}
+.footer-categories{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+.footer-pagament{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #787878;
+    width: 80%;
+    margin: auto;
+}
+.footer-categories > div >h3{
+    color: white;
 
+}
+.footer-categories > div >p{
+    margin-top: 10px;
+}
+/* decoració tituols footer */
+.decoracio{
+    width: 30px;
+    height: 2px;
+    background-color:rgb(255, 143, 156);
+}
+/* Disseny adaptatiu per que s'elimini el banner */
+@media screen and (max-width: 765px) {
+    .banner{
+        display: none;
+    }  
 }
